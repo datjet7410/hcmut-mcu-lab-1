@@ -87,8 +87,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   int led_state_1 = 0;
   int led_state_2 = 0;
-  int counter_1 = 0;
-  int counter_2 = 0;
+  int counter_1 = 1;
+  int counter_2 = 1;
   /* USER CODE END 2 */
 
   /* Infinite loop */
