@@ -114,11 +114,11 @@ int main(void)
   int led_state_2 = 0;
  8000162:	2300      	movs	r3, #0
  8000164:	60bb      	str	r3, [r7, #8]
-  int counter_1 = 0;
- 8000166:	2300      	movs	r3, #0
+  int counter_1 = 1;
+ 8000166:	2301      	movs	r3, #1
  8000168:	607b      	str	r3, [r7, #4]
-  int counter_2 = 0;
- 800016a:	2300      	movs	r3, #0
+  int counter_2 = 1;
+ 800016a:	2301      	movs	r3, #1
  800016c:	603b      	str	r3, [r7, #0]
   while (1)
   {
