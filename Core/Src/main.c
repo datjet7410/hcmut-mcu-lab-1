@@ -49,6 +49,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 void clearAllClock(void);
+void setNumberOnClock(int num);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -85,7 +86,8 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-
+  int counter = 0;
+  clearAllClock();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -95,14 +97,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6
-	  								|GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9
-	  								|GPIO_PIN_10|GPIO_PIN_11|GPIO_PIN_12
-	  								|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15
-	  								, RESET);
-	  HAL_Delay (2000) ;
-	  clearAllClock();
-	  HAL_Delay (2000) ;
+	  if(counter >= 12) counter=0;
+	  setNumberOnClock(counter++);
+	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
@@ -181,6 +178,59 @@ void clearAllClock()
 								|GPIO_PIN_10|GPIO_PIN_11|GPIO_PIN_12
 								|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15
 								, SET);
+}
+void setNumberOnClock(int num)
+{
+	switch(num){
+	case 0:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, RESET);
+
+		break;
+	case 1:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, RESET);
+
+		break;
+	case 2:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, RESET);
+
+		break;
+	case 3:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, RESET);
+
+		break;
+	case 4:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
+
+		break;
+	case 5:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, RESET);
+
+		break;
+	case 6:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, RESET);
+
+		break;
+	case 7:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, RESET);
+
+		break;
+	case 8:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, RESET);
+
+		break;
+	case 9:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_13, RESET);
+
+		break;
+	case 10:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_14, RESET);
+
+		break;
+	case 11:
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, RESET);
+
+		break;
+	}
 }
 /* USER CODE END 4 */
 
