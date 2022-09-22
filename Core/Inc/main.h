@@ -69,11 +69,9 @@ void Error_Handler(void);
 #define LED_YELLOW_2_GPIO_Port GPIOA
 #define LED_GREEN_2_Pin GPIO_PIN_15
 #define LED_GREEN_2_GPIO_Port GPIOA
-
+/* USER CODE BEGIN Private defines */
 #define LED_ROW_1 (LED_RED_1_Pin|LED_YELLOW_1_Pin|LED_GREEN_1_Pin)
 #define LED_ROW_2 (LED_RED_2_Pin|LED_YELLOW_2_Pin|LED_GREEN_2_Pin)
-/* USER CODE BEGIN Private defines */
-
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
