@@ -303,15 +303,11 @@ void clearAllClock()
 {
  8000264:	b580      	push	{r7, lr}
  8000266:	af00      	add	r7, sp, #0
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All, SET);
  8000268:	2201      	movs	r2, #1
- 800026a:	f64f 71f0 	movw	r1, #65520	; 0xfff0
+ 800026a:	f64f 71ff 	movw	r1, #65535	; 0xffff
  800026e:	4802      	ldr	r0, [pc, #8]	; (8000278 <clearAllClock+0x14>)
  8000270:	f000 fbde 	bl	8000a30 <HAL_GPIO_WritePin>
-								|GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9
-								|GPIO_PIN_10|GPIO_PIN_11|GPIO_PIN_12
-								|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15
-								, SET);
 }
  8000274:	bf00      	nop
  8000276:	bd80      	pop	{r7, pc}
