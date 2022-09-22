@@ -111,15 +111,15 @@ int main(void)
   int led_state = 0;
  800015e:	2300      	movs	r3, #0
  8000160:	607b      	str	r3, [r7, #4]
-  int count = 0;
- 8000162:	2300      	movs	r3, #0
+  int count = 1;
+ 8000162:	2301      	movs	r3, #1
  8000164:	603b      	str	r3, [r7, #0]
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-  switch (led_state){
+
+    /* USER CODE BEGIN 3 */
+	  switch (led_state){
  8000166:	687b      	ldr	r3, [r7, #4]
  8000168:	2b02      	cmp	r3, #2
  800016a:	d037      	beq.n	80001dc <main+0x90>
@@ -253,7 +253,7 @@ int main(void)
 	  HAL_Delay (1000) ;
  800021a:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  800021e:	f000 f94f 	bl	80004c0 <HAL_Delay>
-  switch (led_state){
+	  switch (led_state){
  8000222:	e7a0      	b.n	8000166 <main+0x1a>
  8000224:	40010800 	.word	0x40010800
 

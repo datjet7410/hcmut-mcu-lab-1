@@ -86,7 +86,7 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
   int led_state = 0;
-  int count = 0;
+  int count = 1;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -94,7 +94,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-  switch (led_state){
+
+    /* USER CODE BEGIN 3 */
+	  switch (led_state){
 	  case 0:
 		  /*
 		   * Red LED on for 5s
@@ -142,7 +144,6 @@ int main(void)
 	  count++;
 
 	  HAL_Delay (1000) ;
-    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
