@@ -87,7 +87,10 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  int counter = 0;
+  int hours = 0;
+  int minutes = 0;
+  int seconds = 0;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -97,8 +100,25 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  if(counter >= 24) counter=0;
-	  clearNumberOnClock(counter++);
+	  clearAllClock();
+
+	  if (seconds >= 60) {
+		  minutes++;
+		  seconds = 0;
+	  }
+	  if (minutes >= 60) {
+		  hours++;
+		  minutes = 0;
+	  }
+	  if (hours >= 24) {
+		  hours = 0;
+	  }
+
+	  setNumberOnClock(seconds/5);
+	  setNumberOnClock(minutes/5);
+	  setNumberOnClock(hours);
+
+	  seconds++;
 	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
