@@ -172,6 +172,9 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void display_only_LED(int num)
 {
+	/*
+	* Test a LED is on, other LEDs are off 
+	*/
 	switch(num){
 	case 0:
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, RESET);
